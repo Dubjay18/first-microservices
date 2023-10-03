@@ -1,4 +1,4 @@
-import { Logger } from "winston";
+import Logger from "winston";
 import { ExpressConfig } from "./Express";
 
 export class Application {
@@ -8,7 +8,7 @@ export class Application {
     this.express = new ExpressConfig();
     const port = 3000;
     this.server = this.express.app.listen(port, () => {
-      (Logger as any).info(`Server Started! Express:
+      Logger.info(`Server Started! Express:
    http://localhost:${port}`);
     });
   }
